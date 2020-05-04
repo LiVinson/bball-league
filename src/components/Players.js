@@ -60,6 +60,7 @@ export default class Players extends Component {
               rpg,
               spg,
             } = players.find((player) => {
+              console.log(match.params)
               return slug(player.name) === match.params.playerId
             })
 

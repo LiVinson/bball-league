@@ -30,17 +30,21 @@ export default function Sidebar({ title, list, loading, location, match }) {
     <div>
       <h3 className="header">{title}</h3>
       <ul className="sidebar-list">
-        {list.map((item) => (
-          <CustomLink
-            key={item}
-            to={{
-              pathname: `${match.url}/${slug(item)}`,
-              search: location.search,
-            }}
-          >
-            {item.toUpperCase()}
-          </CustomLink>
-        ))}
+        {list.map((item) => {
+          console.log(item)
+          return (
+            <CustomLink
+              key={item}
+              to={{
+                //match.url is of parent component
+                pathname: `${match.url}/${slug(item)}`,
+                search: location.search,
+              }}
+            >
+              {item.toUpperCase()}
+            </CustomLink>
+          )
+        })}
       </ul>
     </div>
   )
