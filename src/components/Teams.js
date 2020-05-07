@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar"
 import { getTeamNames } from "../api"
 import Team from "./Team"
 import TeamLogo from "./TeamLogo"
+import Loading from "./Loading"
 import slug from "slug"
 
 export default class Teams extends Component {
@@ -44,7 +45,7 @@ export default class Teams extends Component {
               <Team id={match.params.teamId}>
                 {(team) =>
                   team === null ? (
-                    <h1>Loading</h1>
+                    <Loading text=""/> 
                   ) : (
                     <div style={{ width: "100%" }}>
                       <TeamLogo id={team.id} className="center" />

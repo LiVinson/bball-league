@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import Sidebar from "./Sidebar"
 import { getTeamsArticles } from "../api"
 import Article from "./Article"
+import Loading from "./Loading"
 
 export default class Articles extends React.Component{
     state = {
@@ -27,7 +28,7 @@ export default class Articles extends React.Component{
         return (
 
             loading === true
-             ? <h1>Loading</h1> 
+             ? <Loading text="Fetching articles"/> 
              : <div className="container two-column">
                 <Sidebar
                     loading={loading}
@@ -43,8 +44,8 @@ export default class Articles extends React.Component{
                             <Article articleId={match.params.articleId} teamId={teamId}>
                                 {(article)=> (
                                     article === null
-                                     ? <h1>Loading</h1>
-                                     :  <div className="panel">
+                                    ? <Loading text="Fetching article"/> 
+                                    :  <div className="panel">
                                             <article className="article" key={article.id}>
                                                 <h1 className="header">{article.title}</h1>
                                                 <p>{article.body}</p>                                    

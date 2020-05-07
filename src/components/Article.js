@@ -8,7 +8,7 @@ export default class Article extends Component {
       article: null
     }
 
-    
+
 
     componentDidMount(){
         const {articleId, teamId} = this.props
@@ -22,7 +22,6 @@ export default class Article extends Component {
         })
         getArticle(teamId, articleId)
         .then(article => this.setState({
-            loading: false,
             article
         }))
     }
