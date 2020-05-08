@@ -232,6 +232,7 @@ a {
   }
 }
 
+/* handles CSS transitions */
 .fade-enter {
   opacity: 0;
   z-index: 1;
