@@ -5,7 +5,7 @@ import { getTeamNames } from "../api"
 import Team from "./Team"
 import TeamLogo from "./TeamLogo"
 import Loading from "./Loading"
-import slug from "slug"
+
 
 export default class Teams extends Component {
   state = {
